@@ -2,6 +2,27 @@
 
 @section('content')
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="">{{ __('Petition') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     <main>
         <div>
             <h1>Content Creators</h1>
@@ -17,15 +38,7 @@
                 culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>
-        <div class="petitionListContainer">
-            @foreach($collection as $item)
-            <li>
-                <a>{{$item->title}}</a>
-                <a>{{$item->creater}}</a>
-                <a>{{$item->info}}</a>
-            </li>
-            @endforeach
-        </div>
     </main>
 </div>
+
 @endsection

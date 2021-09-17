@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $petitions = DB::table('petitions')->get();
+        $creator = DB::table('users')->get();
+        return view('home', ['collection' => $petitions, 'creator' => $creator]);
     }
 }
