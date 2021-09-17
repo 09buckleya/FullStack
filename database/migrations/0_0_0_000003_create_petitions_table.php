@@ -17,6 +17,7 @@ class CreatePetitionTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('info');
+            $table->string('creater');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

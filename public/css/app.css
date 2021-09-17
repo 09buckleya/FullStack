@@ -1,110 +1,127 @@
 * {
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-  } 
-  
-  #rokBanner {
+}
+
+#rokBanner {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  }
-  
-  .loginContainer {
+}
+
+.loginContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex: 1 1 100%;
-    background-color:darkcyan;
+    background: rgb(17, 13, 83);
+    background: linear-gradient(
+        90deg,
+        rgba(17, 13, 83, 1) 0%,
+        rgba(74, 74, 150, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
     border: black solid 2px;
-  }
-  
-  .loginContainer ul {
+}
+
+.loginContainer ul {
     display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
-  }
-  
-  .loginContainer ul li {
+}
+
+.loginContainer ul li {
     padding: 7px 60px;
-  }
-  .loginContainer ul li a {
+}
+.loginContainer ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-  }
-  
-  .navContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: red;
-    border: black solid 2px;
-    border-top: none;
-  }
-  
-  #menuIcon {
-    height: 40px;
-    transform: rotate(0deg);
-    transition: transform 0.5s linear;
-  }
-  #menuIcon270 {
-    height: 40px;
-    transform: rotate(270deg);
-    transition: transform 0.5s linear;
-  }
-  nav {
+}
+
+nav {
     flex: 1 1 80%;
     overflow: hidden;
     transition: height 0.5s;
-  }
-  nav ul {
+}
+nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
-  }
-  nav ul li {
+}
+nav ul li {
     padding: 9px 4px;
     border-bottom: 1px solid black;
-  }
-  nav ul li a {
+}
+nav ul li a {
     text-decoration: none;
     display: block;
     color: black;
     font-weight: bold;
-  }
-  
-  main {
+}
+
+main {
     display: block;
     margin: 5px;
-  }
-  
-  .contentCreators {
+}
+
+.petition {
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
-  }
-  .contentCreators > div {
-    flex: 1 1 50%;
-  }
-  .contentCreators img {
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-  }
-  
-  footer {
-    background: red;
-    margin-top: 20px;
-    padding: 20px;
-  }
-  footer > div > p {
+    background: rgb(17, 13, 83);
+    background: linear-gradient(
+        90deg,
+        rgba(17, 13, 83, 1) 0%,
+        rgba(74, 74, 150, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    height: 7.5%;
+}
+footer > div > p {
     color: black;
     font-weight: bold;
     text-align: center;
     font-size: 0.8rem;
-  }
+}
+
+/* Home Page css */
+
+.petitionListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.petitionListContainer > li {
+    list-style: none;
+    flex: 1 1 20%;
+    color: rgb(47, 0, 255);
+    display: inline-block;
+    background-color: bisque;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    padding: 10px;
+}
+
+.petitionListContainer > li > a {
+  text-align: center;
+  padding: 5px;
+  display: inline-table;
+  width: 100%;
+}
+.petition {
+    display: flex;
+}

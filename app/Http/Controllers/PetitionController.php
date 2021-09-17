@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Petition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PetitionController extends Controller
 {
@@ -14,6 +15,7 @@ class PetitionController extends Controller
      */
     public function index()
     {
+
         return view('petition');
     }
 
@@ -24,7 +26,11 @@ class PetitionController extends Controller
      */
     public function create()
     {
-        //
+        $data = DB::table('petitions')
+            ->insert([
+                'title' => 'title here',
+                'info' => 'insert infor here'
+            ]);
     }
 
     /**
@@ -69,7 +75,12 @@ class PetitionController extends Controller
      */
     public function update(Request $request, Petition $petition)
     {
-        //
+        $data = DB::table('petitions')
+            ->where('id', 'insert id here')
+            ->update([
+                'title' => 'title here',
+                'info' => 'insert info here'
+            ]);
     }
 
     /**
@@ -80,6 +91,8 @@ class PetitionController extends Controller
      */
     public function destroy(Petition $petition)
     {
-        //
+        $data = DB::table('petitions')
+            ->where('id', 'id')
+            ->delete();
     }
 }
