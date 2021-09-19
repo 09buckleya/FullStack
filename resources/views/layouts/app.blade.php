@@ -48,8 +48,7 @@
                     @endif
                     @else
                     <li>
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Hello {{ Auth::user()->name }}
                         </a>
 
@@ -64,12 +63,20 @@
                             </form>
                         </div>
                     </li>
+                    <table>
+                        <tr>
+                            <td><a href={{"/home"}}>Home</a>
+                                <a href={{"/list"}}>Dashboard</a>
+                                
+                            </td>
+                        </tr>
+                    </table>
                     @endguest
                 </ul>
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
         <footer>

@@ -1,42 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="">{{ __('Petition') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
     <main>
         <div>
-            <h1>Content Creators</h1>
+            <h1>Petition view page</h1>
         </div>
         <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <div class="petitionListContainer">
+                @foreach ($data as $item)
+                <li>
+                    <a>Petition Name: {{$item->title}}</a>
+                    <a>Creator Name: {{$item->name}}</a>
+                    <a>Description: {{$item->info}}</a>
+                    <a>Number of signatures: {{$count}}</a>
+                </li>
+                @endforeach
+            </div>
+            <div><h1>List of signatures</h1></div>
+            <div class="petitionListContainer">
+                @foreach ($signatures as $item)
+                <li>
+                    <a>Signature: {{$item->name}}</a>
+                </li>
+                @endforeach
+            </div>
         </div>
     </main>
 </div>
